@@ -5,6 +5,7 @@ import org.example.Backend.DbManager.factory.DbManagerFactory;
 import org.example.Backend.DbManager.factory.DbManagerFactoryImpl;
 import org.example.Backend.TableStorageManager.IndexManager.IndexManager;
 import org.example.Backend.TableStorageManager.IndexManager.IndexManagerImpl;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +25,12 @@ class IndexManagerTest {
     @BeforeAll
     public static void setUp() {
         indexes.clear();
+    }
+
+    @AfterAll
+    public static void tearDown(){
+        indexes.clear();
+        indexManager.close();
     }
 
     @Test

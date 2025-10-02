@@ -1,7 +1,6 @@
 package org.example.Backend.DbManager.factory;
 
 import org.example.Backend.DbManager.DbManager;
-import org.example.Backend.DbManager.DbManagerImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,10 +17,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class DbManagerFactoryImplTest {
     private final DbManagerFactoryImpl dbManagerFactory = DbManagerFactoryImpl.getDbManagerFactory();
     private final String basePath = System.getProperty("user.dir") + File.separator + "test";
-    private static DbManagerImpl<Integer, Integer> dbManager;
 
     @BeforeEach
     void setUp() throws IOException {
+        dbManagerFactory.clear();
         clearDirectory();
     }
 

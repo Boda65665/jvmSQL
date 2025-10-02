@@ -39,6 +39,7 @@ class FreeSpaceManagerImplTest {
     @AfterEach
     void tearDown() {
         dbManager.close();
+        freeSpaceManager.freeSpace.close();
     }
 
     @ParameterizedTest

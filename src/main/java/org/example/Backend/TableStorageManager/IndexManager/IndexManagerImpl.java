@@ -33,4 +33,9 @@ public class IndexManagerImpl<K, V> extends IndexManager<K, V> {
     public int size() {
         return indexes.size();
     }
+
+    @Override
+    public void close() {
+        indexes.close();
+    }
 }

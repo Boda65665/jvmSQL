@@ -29,7 +29,7 @@ class EditorMetadataFragmentTest {
     private final FileOperationFactory fileOperationFactory = new FileOperationFactoryImpl();
     private static DbManager dbManager;
     private final FileWriter fileWriter = fileOperationFactory.getFileWriter();
-    private IndexManager<Integer, Interval> indexManager;
+    private static IndexManager<Integer, Interval> indexManager;
     private final String NAME_TABLE = "test";
     private final TestHelperTSM testHelperTSM = new TestHelperTSM(fileOperationFactory.getFilePathProvider());
 
@@ -45,6 +45,7 @@ class EditorMetadataFragmentTest {
     @AfterAll
     static void tearDown() {
         dbManager.close();
+        indexManager.close();
     }
 
     @Test

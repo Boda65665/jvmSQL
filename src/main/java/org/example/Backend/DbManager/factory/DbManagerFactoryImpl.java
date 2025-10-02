@@ -32,4 +32,8 @@ public class DbManagerFactoryImpl implements DbManagerFactory {
     public synchronized List<DbManager> getDbManagers() {
         return new ArrayList<>(indexManagersMap.values());
     }
+
+    public void clear(){
+        indexManagersMap.clear();
+    }
 }
